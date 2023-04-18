@@ -10034,9 +10034,31 @@ p {
   font-size: 2rem;
 }
 
-input, input:hover, input:active {
+input,
+input:hover,
+input:active {
   border: none;
   outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 12px;
+  background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FEF200;
+}
+
+a {
+  transition: all 0.2s;
+}
+a:hover {
+  color: #FEF200 !important;
+}
+nav a:hover {
+  transform: translateY(-20%);
 }
 
 .background {
@@ -10044,6 +10066,11 @@ input, input:hover, input:active {
   background: url(../imges/header/header-img2.webp) 0% 65%;
 }
 
+header button {
+  position: relative;
+  z-index: 2;
+  margin-top: 5rem;
+}
 header .row,
 header .container {
   height: 100%;
@@ -10051,9 +10078,27 @@ header .container {
 header .row {
   align-items: center;
 }
+header h1 {
+  margin-top: 10rem;
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+  color: white;
+  font-size: 3rem;
+  padding: 1rem 0;
+  border-bottom: 5px solid white;
+}
 header ul {
   display: flex;
   justify-content: center;
+  top: 2rem;
+  position: relative;
+  justify-content: space-around;
+}
+header li {
+  color: #c7c7c7;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .header-cover {
@@ -10076,8 +10121,8 @@ header ul {
 .blue,
 .yellow,
 .about-img {
-  height: 55vh;
-  width: 100%;
+  height: 45vh;
+  width: 95%;
   position: absolute;
 }
 
@@ -10087,18 +10132,18 @@ header ul {
 }
 
 .about-img-cover {
-  margin-top: 4rem;
+  margin: 9rem 0 0 6rem;
 }
 
 .blue {
   z-index: 1;
-  inset: -25px 0 0 -25px;
+  inset: -2rem 0 0 -2rem;
   background-color: #11162E;
 }
 
 .yellow {
   z-index: 1;
-  inset: 25px 0 0 25px;
+  inset: 2rem 0 0 2rem;
   background-color: #FEF200;
 }
 
@@ -10150,7 +10195,7 @@ form {
   color: white;
   background-color: #11162E;
 }
-.navbar ul {
+.navbar .nav-flex {
   padding: 0.7rem 0;
   display: flex;
   justify-content: space-evenly;
@@ -10160,26 +10205,6 @@ form {
   font-size: 1rem;
   color: white;
   text-decoration: none;
-}
-
-header h1 {
-  position: relative;
-  z-index: 2;
-  font-weight: bold;
-  color: white;
-  font-size: 3rem;
-  padding: 1rem 0;
-  border-bottom: 5px solid white;
-}
-header ul {
-  top: 6rem;
-  position: relative;
-  justify-content: space-around;
-}
-header li {
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
 }
 
 .owner p {
