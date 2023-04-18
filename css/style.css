@@ -9992,6 +9992,11 @@ textarea.form-control-lg {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 3rem;
+}
+
 li {
   list-style: none;
 }
@@ -10061,15 +10066,30 @@ nav a:hover {
   transform: translateY(-20%);
 }
 
+button {
+  transition: 0.2s all;
+  color: black !important;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border: none;
+  padding: 0.8rem 3rem;
+}
+
+button:hover {
+  background-color: #cbc100;
+  transform: scale(1.05);
+}
+
 .background {
   height: 80vh;
   background: url(../imges/header/header-img2.webp) 0% 65%;
 }
 
 header button {
+  font-weight: bold;
   position: relative;
   z-index: 2;
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 header .row,
 header .container {
@@ -10118,6 +10138,10 @@ header li {
   height: 100%;
 }
 
+.about {
+  margin-bottom: 10rem;
+}
+
 .blue,
 .yellow,
 .about-img {
@@ -10163,6 +10187,10 @@ header li {
   background-color: #11162E;
 }
 
+#panels {
+  padding-top: 1rem;
+}
+
 .same {
   color: black;
   background-color: #A1A6B1;
@@ -10177,6 +10205,7 @@ header li {
   background-color: #11162E;
   box-shadow: 0 0 0 100vmax #11162E;
   clip-path: inset(0 -100vmax);
+  padding-bottom: 10rem;
 }
 
 button {
@@ -10270,12 +10299,9 @@ form label {
   transform: translate(1rem, -45%);
 }
 
-button {
-  color: black;
-  font-weight: bold;
-  font-size: 1.5rem;
-  border: none;
-  padding: 0.8rem 4rem;
+nav img {
+  height: 50%;
+  width: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */
