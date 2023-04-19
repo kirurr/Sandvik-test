@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -31,11 +30,13 @@
     <div class="container-fluid background">
       <div class="container">
         <div class="row">
-          <div class="col-8">
+          <div class="col-lg-8 col-md-12">
             <h1>
               Jesteśmy oficjalnym przedstawicielem firmy Sandvik Coromant na terenie Rzeczpospolitej Polskiej
             </h1>
-            <button>Skontaktuj się z nami</button>
+            <form action="">
+              <button href="#">Skontaktuj się z nami</button>
+            </form>
           </div>
           <div class="col-12">
             <ul>
@@ -60,7 +61,7 @@
   <section class="about" id="about">
     <div class="container">
       <div class="row">
-        <div class="col-5">
+        <div class="col-lg-5 col-md-12 about-text-anim hidden-anim">
           <h2>Firma</h2>
           <p>LEXTOOLS jest niezawodnym dostawcą narzędzi dla czołowych polskich firm budowy maszyn. Zawarliśmy
             długoterminowe kontrakty z przedsiębiorstwami i holdingami z kraju.
@@ -69,7 +70,7 @@
             obsługi.
             Zapewnimy obsługę serwisową i gwarancyjną.</p>
         </div>
-        <div class="col-6 offset-1">
+        <div class="col-lg-6 offset-lg-1 col-md-8 offset-2 about-img-anim hidden-anim">
           <div class="about-img-cover">
             <div class="blue"></div>
             <div class="about-img"><img src="imges/about/images_1_about.jpg" alt=""></div>
@@ -83,36 +84,36 @@
 
   <section class="panels" id="panels">
     <div class="container">
-      <div class="row">
+      <div class="row panels-first-row hidden-anim">
         <div class="col-4">
-          <div class="panel same">
+          <div class="panel same panel-text">
             <h3>Pewność dobrej jakości narzędzi</h3>
+            <p>LEXTOOLS - dostarczamy tylko najlepsze produkty</p>
           </div>
         </div>
         <div class="col-4">
-          <div class="panel">
-            <img src="imges/about/drill_about.jpg">
+          <div class="panel img-first">
           </div>
         </div>
         <div class="col-4">
-          <div class="panel same">
+          <div class="panel panel-text same">
             <h3>Pełna dokumentacja techniczna</h3>
+            <p>LEXTOOLS - dostarczamy tylko najlepsze produkty</p>
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row panels-second-row hidden-anim">
         <div class="col-4">
-          <div class="panel">
-            <img src="imges/about/drill_about.jpg">
-          </div>
+          <div class="panel img-second"></div>
         </div>
         <div class="col-4">
-          <div class="panel">
+          <div class="panel panel-text">
             <h3>Zgodność produktów</h3>
+            <p>LEXTOOLS - dostarczamy tylko najlepsze produkty</p>
           </div>
         </div>
         <div class="col-4">
-          <div class="panel"><img src="imges/about/drill_about.jpg"></div>
+          <div class="panel img-third"></div>
         </div>
       </div>
     </div>
@@ -130,23 +131,26 @@
           <p>Oferujemy najlepsze narzędzia do obróbki metali, a także wysokowydajne rozwiązania technologiczne, które
             pozwalają klientom uzyskać doskonałe efekty podczas pracy z narzędziem.
           </p>
+          <p>Sandvik Coromant to międzynarodowa firma produkująca narzędzia skrawające do obróbki metali.
+            Przedstawicielstwa Sandvik Coromant działają w ponad 130 krajach na całym świecie.</p>
         </div>
       </div>
 
       <div class="row">
         <div class="col-4 offset-1">
-          <p>Sandvik Coromant to międzynarodowa firma produkująca narzędzia skrawające do obróbki metali.
-            Przedstawicielstwa Sandvik Coromant działają w ponad 130 krajach na całym świecie.</p>
+          <div class="p-container">
+            <p>Nasze narzędzia mają wiele zalet w porównaniu do innych firm:</p>
 
-          <p>Nasze narzędzia mają wiele zalet w porównaniu do innych firm:</p>
+            <p>&bull; Posiadamy własne centrum badawczo-testowe, które zapewnia wydawanie tylko najlepszych produktów
+              dla
+              każdego obszaru produkcji;</p>
 
-          <p>– Posiadamy własne centrum badawczo-testowe, które zapewnia wydawanie tylko najlepszych produktów dla
-            każdego obszaru produkcji;</p>
+            <p>&bull; Specjalne twarde stopy gwarantują dobrą wydajność i długą żywotność narzędzia;</p>
 
-          <p>— Specjalne twarde stopy gwarantują dobrą wydajność i długą żywotność narzędzia;</p>
-
-          <p>— Narzędzia Sandvik Coromant są uznanymi światowymi liderami w dziedzinie narzędzi skrawających do metalu.
-          </p>
+            <p>&bull; Narzędzia Sandvik Coromant są uznanymi światowymi liderami w dziedzinie narzędzi skrawających do
+              metalu.
+            </p>
+          </div>
         </div>
         <div class="col-6 offset-1">
           <img src="imges/about/zapas2.webp" class="owner-second-img">
@@ -180,15 +184,19 @@
           </div>
         </div>
         <div class="col-6 offset-2">
-          <form action="">
-            <h3>Formularz</h3>
+          <form class="contact-form" action="">
+            <h3>Skontaktuj się z nami</h3>
             <div class="input-cover">
-              <label for="">Imię <r>*</r></label>
-              <input type="text" required placeholder="Twoje imię">
+              <label for="">Imię</label>
+              <input type="text" required placeholder="Wpisz swoje imię">
             </div>
             <div class="input-cover">
-              <label for="">Numer <r>*</r></label>
-              <input type="text" required placeholder="Twój numer">
+              <label for="">Numer</label>
+              <input type="text" required placeholder="Wpisz swój numer">
+            </div>
+            <div class="input-cover">
+              <label for="">Adres e-mail</label>
+              <input type="text" required placeholder="Wpisz swój adres">
             </div>
             <button type="submit">Wyślij</button>
           </form>
@@ -197,7 +205,9 @@
     </div>
   </section>
 
-
+  <footer>
+    <script src="js/main.js"></script>
+  </footer>
 </body>
 
 </html>

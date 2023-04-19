@@ -9997,6 +9997,10 @@ html {
   scroll-padding-top: 3rem;
 }
 
+input {
+  font-size: 0.8rem;
+}
+
 li {
   list-style: none;
 }
@@ -10021,18 +10025,19 @@ body {
 }
 
 section {
+  overflow: hidden;
   padding: 5rem 0;
 }
 
 h2 {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: bold;
   margin-bottom: 2rem;
 }
 
 h3 {
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 p {
@@ -10080,8 +10085,50 @@ button:hover {
   transform: scale(1.05);
 }
 
+.hidden-anim {
+  opacity: 0;
+}
+
+.show-anim {
+  animation-name: right-to-left;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.show-anim:has(h2) {
+  animation-name: left-to-right;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.show-anim.panels-second-row {
+  animation-name: left-to-right;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes right-to-left {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes left-to-right {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .background {
-  height: 80vh;
+  height: 84vh;
   background: url(../imges/header/header-img2.webp) 0% 65%;
 }
 
@@ -10122,7 +10169,7 @@ header li {
 }
 
 .header-cover {
-  height: 80%;
+  height: 90%;
   width: 100%;
   position: absolute;
   background-color: rgba(28, 41, 61, 0.4);
@@ -10180,6 +10227,7 @@ header li {
 }
 
 .panel {
+  aspect-ratio: 1/1;
   padding: 3rem;
   color: white;
   height: 100%;
@@ -10187,8 +10235,37 @@ header li {
   background-color: #11162E;
 }
 
+.img-first,
+.img-second {
+  background-size: cover;
+}
+
+.img-first {
+  background: url("../imges/images_1_about.jpg") right;
+}
+
+.img-second {
+  background: url("../imges/panel2.jpg") center;
+}
+
+.img-third {
+  background: url("../imges/about/drill_about.jpg") center;
+  background-size: cover;
+}
+
 #panels {
   padding-top: 1rem;
+}
+
+.panel-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.panel p {
+  font-size: 1rem;
+  margin: 0;
 }
 
 .same {
@@ -10213,7 +10290,7 @@ button {
   color: white;
 }
 
-form {
+.contact-form {
   height: 100%;
   width: 100%;
   padding: 2rem 3rem;
@@ -10249,6 +10326,10 @@ form {
   height: 350px;
 }
 
+.p-container {
+  margin-top: 5rem;
+}
+
 .contacts img {
   height: 1.7rem;
   width: 1.7rem;
@@ -10270,25 +10351,25 @@ form {
   gap: 1rem;
 }
 
-form {
+.contact-form {
   display: flex;
   flex-direction: column;
   text-align: center;
   gap: 2rem;
   align-items: center;
 }
-form input {
+.contact-form input {
   height: 100%;
   width: 100%;
 }
-form .input-cover {
+.contact-form .input-cover {
   border: 1px solid gray;
   padding: 0.5rem;
   width: 60%;
   height: 3rem;
   position: relative;
 }
-form label {
+.contact-form label {
   position: absolute;
   height: fit-content;
   width: fit-content;
@@ -10302,6 +10383,22 @@ form label {
 nav img {
   height: 50%;
   width: 50%;
+}
+
+@media (max-width: 992px) {
+  header ul {
+    inset: 0;
+  }
+  .about {
+    margin: 0;
+  }
+  .about p {
+    font-size: 1.5rem;
+  }
+  .about-img-cover {
+    margin: 0;
+    margin-top: 4rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
