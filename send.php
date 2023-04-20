@@ -1,51 +1,60 @@
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php';
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/Exception.php';
 
+// другие важные переменные
+$sender = 'timon09df@gmail.com';
+
+// настройки кодировок и прочего
 $mail = new PHPMailer(true);
+$mail->CharSet = 'UTF-8';
+$mail->setLanguage('ru', 'phpmailer/language/');
+$mail->isHTML(true);
 
+// переменные для вывода 
 $name = $_POST['name'];
 $email = $_POST['email'];
-$phone = $_POST['phone'];
-$message = $_POST['message'];
 
-try {
-  //Server settings
-  $mail->isSMTP();                                            //Send using SMTP
-  $mail->Host       = 'smtp.elasticemail.com';                     //Set the SMTP server to send through
-  $mail->SMTPAuth   = true;                                    //Enable SMTP authentication
-  $mail->Username   = 'timon09df@gmail.com';                     //SMTP username
-  $mail->Password   = '311B79FE8796B9CDD87A74D1F69A6E5FDFC9';  //SMTP password
-  $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;             //Enable implicit TLS encryption
-  $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+// настройки сервера
+$mail->Host       = 'smtp.elasticemail.com';                    
+$mail->SMTPAuth   = true;                                   
+$mail->Username   = $sender;                     
+$mail->Password   = '233973DF64E2EC6882B41B1CC99B132E09A5';                               
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
+$mail->Port       = 465;  
 
-  //Recipients
-  $mail->setFrom('timon09df@gmail.com', 'Mailer');
-  $mail->addAddress('kirur.smtp@gmail.com', 'Joe User');     //Add a recipient
-  // $mail->addAddress('ellen@example.com');               //Name is optional
-  // $mail->addReplyTo('info@example.com', 'Information');
-  // $mail->addCC('cc@example.com');
-  // $mail->addBCC('bcc@example.com');
+// от кого письмо
+$mail->setFrom($sender, 'строитель');
+// кому отправить
+$mail->addAddress('kirur.smtp@gmail.com');
 
-  //Attachments
-  // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-  // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+// тема письма
+$mail->Subject = 'сайт строителей белого дома';
 
-  //Content
-  $mail->isHTML(true);                                  //Set email format to HTML
+// тело письма
+$body = '<h1>письмо кароче пришло с сайта ебать!</h1>';
+$body.= '<p><strong>Имя:</strong> ' . $name . '</p>';
+$body.= '<p><strong>Имя:</strong> ' . $email . '</p>';
 
 
-  $mail->Subject = 'Here is the subject';
-  $mail->Body    = 'Имя: ' . $name . '<br>' . 'Почта: ' . $email . '<br>' . 'Телефон: ' . $phone . '<br>' . 'Сообщение: ' . $message;
-  $mail->AltBody = '';
+$mail->Body = $body;
 
-  $mail->send();
-  header('location: index.html');
-  echo 'Message has been sent';
-} catch (Exception $e) {
-  echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+// проверка отправки
+if(!$mail->send()) {
+  $message = 'error';
+} else {
+  $message = 'sended';
 }
+
+// получаем ответ и возвращаем его
+$response = ['message' => $message];
+
+header('Content-type: aplication/json');
+echo json_encode($response);
+
+
+

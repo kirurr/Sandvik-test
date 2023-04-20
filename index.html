@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -30,12 +31,12 @@
     <div class="container-fluid background">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 col-md-12">
+          <div class="col-xl-8 col-md-12">
             <h1>
               Jesteśmy oficjalnym przedstawicielem firmy Sandvik Coromant na terenie Rzeczpospolitej Polskiej
             </h1>
-            <form action="">
-              <button href="#">Skontaktuj się z nami</button>
+            <form action="#form">
+              <button>Skontaktuj się z nami</button>
             </form>
           </div>
           <div class="col-12">
@@ -70,7 +71,7 @@
             obsługi.
             Zapewnimy obsługę serwisową i gwarancyjną.</p>
         </div>
-        <div class="col-lg-6 offset-lg-1 col-md-8 offset-2 about-img-anim hidden-anim">
+        <div class="col-lg-6 offset-lg-1 col-md-8 col-10 offset-1 offset-md-2 about-img-anim hidden-anim">
           <div class="about-img-cover">
             <div class="blue"></div>
             <div class="about-img"><img src="imges/about/images_1_about.jpg" alt=""></div>
@@ -84,37 +85,36 @@
 
   <section class="panels" id="panels">
     <div class="container">
-      <div class="row panels-first-row hidden-anim">
-        <div class="col-4">
-          <div class="panel same panel-text">
+      <div class="row panels-first-row gy-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="panel first-row same panel-text">
             <h3>Pewność dobrej jakości narzędzi</h3>
             <p>LEXTOOLS - dostarczamy tylko najlepsze produkty</p>
           </div>
         </div>
-        <div class="col-4">
-          <div class="panel img-first">
+        <div class="col-lg-4 col-md-6">
+          <div class="panel first-row img-first">
           </div>
         </div>
-        <div class="col-4">
-          <div class="panel panel-text same">
+        <div class="col-lg-4 col-md-6">
+          <div class="panel first-row panel-text same">
             <h3>Pełna dokumentacja techniczna</h3>
             <p>LEXTOOLS - dostarczamy tylko najlepsze produkty</p>
           </div>
         </div>
-      </div>
-      <div class="row panels-second-row hidden-anim">
-        <div class="col-4">
-          <div class="panel img-second"></div>
+        <div class="col-lg-4 col-md-6">
+          <div class="panel second-row img-second"></div>
         </div>
-        <div class="col-4">
-          <div class="panel panel-text">
+        <div class="col-lg-4 col-md-6">
+          <div class="panel second-row panel-text">
             <h3>Zgodność produktów</h3>
             <p>LEXTOOLS - dostarczamy tylko najlepsze produkty</p>
           </div>
         </div>
-        <div class="col-4">
-          <div class="panel img-third"></div>
+        <div class="col-lg-4 col-md-6">
+          <div class="panel second-row img-third"></div>
         </div>
+      </div>        
       </div>
     </div>
 
@@ -123,10 +123,10 @@
   <section class="owner" id="owner">
     <div class="container">
       <div class="row">
-        <div class="col-6">
+        <div class="col-lg-6 col-10 offset-1 order-1 order-lg-0">
           <img src="imges/about/sandvik.jpg" class="owner-first-img">
         </div>
-        <div class="col-4 offset-1">
+        <div class="col-lg-4 offset-lg-1 col-12 offset-0">
           <h2>Sandvik Coromant</h2>
           <p>Oferujemy najlepsze narzędzia do obróbki metali, a także wysokowydajne rozwiązania technologiczne, które
             pozwalają klientom uzyskać doskonałe efekty podczas pracy z narzędziem.
@@ -137,9 +137,9 @@
       </div>
 
       <div class="row">
-        <div class="col-4 offset-1">
+        <div class="col-lg-4 offset-lg-1 col-md-12 offset-md-0 order-md-1 order-lg-0">
           <div class="p-container">
-            <p>Nasze narzędzia mają wiele zalet w porównaniu do innych firm:</p>
+            <p id="first-p">Nasze narzędzia mają wiele zalet w porównaniu do innych firm:</p>
 
             <p>&bull; Posiadamy własne centrum badawczo-testowe, które zapewnia wydawanie tylko najlepszych produktów
               dla
@@ -152,7 +152,7 @@
             </p>
           </div>
         </div>
-        <div class="col-6 offset-1">
+        <div class="col-lg-6 offset-lg-1">
           <img src="imges/about/zapas2.webp" class="owner-second-img">
         </div>
       </div>
@@ -168,7 +168,7 @@
   <section class="contacts" id="contacts">
     <div class="container">
       <div class="row">
-        <div class="col-4">
+        <div class="col-lg-4 col-md-12">
           <p>ul. Warszawska 6, lokal 32, 15-063, Białystok, Polska<br>
             Pn — Pt: 8:00 — 17:00</p>
           <div class="contact-flex">
@@ -183,22 +183,22 @@
             <a class="mail" href="mailto:lextoolspoland@gmail.com">lextoolspoland@gmail.com</a>
           </div>
         </div>
-        <div class="col-6 offset-2">
-          <form class="contact-form" action="">
+        <div class="col-lg-6 offset-lg-2 col-md-10 offset-md-1">
+          <form class="contact-form" id="form">
             <h3>Skontaktuj się z nami</h3>
             <div class="input-cover">
-              <label for="">Imię</label>
-              <input type="text" required placeholder="Wpisz swoje imię">
+              <label>Imię</label>
+              <input name="name" class="_req" placeholder="Wpisz swoje imię">
             </div>
             <div class="input-cover">
-              <label for="">Numer</label>
-              <input type="text" required placeholder="Wpisz swój numer">
+              <label>Numer</label>
+              <input name="phone" class="_req" placeholder="Wpisz swój numer">
             </div>
             <div class="input-cover">
-              <label for="">Adres e-mail</label>
-              <input type="text" required placeholder="Wpisz swój adres">
+              <label>Adres e-mail</label>
+              <input name="email" class="_req _email" placeholder="Wpisz swój adres">
             </div>
-            <button type="submit">Wyślij</button>
+            <button id="form-button" type="submit">Wyślij</button>
           </form>
         </div>
       </div>
@@ -206,7 +206,7 @@
   </section>
 
   <footer>
-    <script src="js/main.js"></script>
+
   </footer>
 </body>
 
