@@ -56,5 +56,3 @@ $response = ['message' => $message];
 header('Content-type: aplication/json');
 echo json_encode($response);
 
-
-
