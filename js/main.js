@@ -5,6 +5,21 @@ document.addEventListener('DOMContentLoaded', function () {
   // выбираем форму и обрабатываем нажатие на кнопку
   const form = document.getElementById('form');
   const button = document.getElementById('form-button');
+
+  const text = document.querySelectorAll(".text");
+
+  function toggleAnimClass(text) {
+    text.forEach(e => e.classList.toggle('anim'));
+  }
+  function toggleCompleteClass(text) {
+    text.forEach(e => e.classList.toggle('complete'));
+  }
+  function toggleErrorClass(text) {
+    text.forEach(e => e.classList.toggle('error'));
+  }
+
+
+
   form.addEventListener('submit', formSend);
 
   // функция отправки формы
@@ -21,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // отправляем форму
 
     if (error === 0) {
-      button.classList.add('_sending');
+      toggleAnimClass(text);
       let response = await fetch('send.php', {
         method: 'POST',
         body: formData
@@ -29,16 +44,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (response.ok) {
         let result = await response.json();
-        alert(result.message);
         if (result.message === 'sended') {
           form.reset();
-          button.classList.add('_sended');
-          form.classList.remove('_sending');
+          toggleCompleteClass(text);
+          setTimeout(toggleAnimClass, 1500, text);
+          setTimeout(toggleCompleteClass, 2000, text);
         }
 
       } else {
-        button.classList.add('_send-error');
-        form.classList.remove('_sending');
+        form.reset();
+        toggleErrorClass(text);
+        setTimeout(toggleAnimClass, 1500, text);
+        setTimeout(toggleErrorClass, 2000, text);
       }
 
     } else {
@@ -136,5 +153,4 @@ document.addEventListener('DOMContentLoaded', function () {
   panels.forEach(item => {
     panelsObserver.observe(item);
   });
-
 })

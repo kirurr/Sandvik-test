@@ -10089,6 +10089,14 @@ button:active {
   background-color: #cbc100;
 }
 
+.about .container {
+  padding-bottom: 2rem;
+}
+
+.panels-first-row {
+  margin-top: 0;
+}
+
 .hidden-anim, .panel {
   opacity: 0;
 }
@@ -10312,7 +10320,76 @@ header li {
   padding-bottom: 10rem;
 }
 
+#form-button {
+  padding: 2rem 6rem;
+  position: relative;
+}
+#form-button p {
+  color: black;
+}
+
+form button:has(.error) {
+  background-color: red;
+}
+form button:has(.error) p {
+  color: white;
+}
+
+form button:has(.complete) {
+  background-color: rgb(0, 255, 0);
+}
+
+.text {
+  transition: all 1s ease-out;
+  margin: 0 auto;
+  inset: 0;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+}
+
+.first {
+  top: 0.9rem;
+}
+
+.second {
+  top: 135px;
+}
+
+.third {
+  top: 135px;
+}
+
+.fourth {
+  top: 135px;
+}
+
+.first.text.anim {
+  top: -100px;
+}
+
+.second.text.anim {
+  top: 0.9rem;
+}
+
+.second.text.anim.complete {
+  top: -100px;
+}
+
+.third.text.anim.complete {
+  top: 0.9rem;
+}
+
+.second.text.anim.error {
+  top: -100px;
+}
+
+.fourth.text.anim.error {
+  top: 0.9rem;
+}
+
 button {
+  overflow: hidden;
   background-color: #FEF200;
   color: white;
 }
@@ -10461,6 +10538,9 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (max-width: 992px) {
+  .about .container {
+    padding-bottom: 2rem;
+  }
   header h1 {
     font-size: 2.3rem;
     margin-top: 3rem;
@@ -10494,7 +10574,12 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (max-width: 767px) {
+  .sandvik-bar img {
+    height: 170%;
+    width: 170%;
+  }
   header ul {
+    gap: 2rem;
     text-align: center;
     top: 0;
   }
@@ -10518,6 +10603,9 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (max-width: 575px) {
+  header ul {
+    display: none;
+  }
   .contact-form .input-cover {
     width: 90%;
   }
@@ -10525,7 +10613,7 @@ input::-webkit-inner-spin-button {
     margin: 0;
   }
   .about p {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   h3 {
     font-size: 2.5rem;
@@ -10539,6 +10627,11 @@ input::-webkit-inner-spin-button {
   }
   .owner {
     padding-bottom: 0;
+  }
+}
+@media (max-width: 375px) {
+  .panel p {
+    font-size: 1rem;
   }
 }
 
