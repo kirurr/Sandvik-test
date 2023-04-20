@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 // проверяем, загружена ли страница и начинаем работу
 document.addEventListener('DOMContentLoaded', function () {
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let formData = new FormData(form);
 
     // отправляем форму
+
     if (error === 0) {
       button.classList.add('_sending');
       let response = await fetch('send.php', {
@@ -34,14 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
           button.classList.add('_sended');
           form.classList.remove('_sending');
         }
-        
+
       } else {
         button.classList.add('_send-error');
         form.classList.remove('_sending');
       }
 
     } else {
-      alert('Заполните имя и почту');
+      // alert('Заполните имя и почту');
     }
   }
 
@@ -68,13 +69,18 @@ document.addEventListener('DOMContentLoaded', function () {
           error++;
         }
       }
-      return error;
     }
+    return error;
   }
 
   // функции добавления и удаления класса с ошибкой
   function formAddError(input) {
     input.parentElement.classList.add('_error');
+    input.parentElement.classList.add('_error-anim');
+    setTimeout(formRemoveErrorAnim, 300, input);
+  }
+  function formRemoveErrorAnim(input) {
+    input.parentElement.classList.remove('_error-anim');
   }
   function formRemoveError(input) {
     input.parentElement.classList.remove('_error');
@@ -84,6 +90,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function emailTest(input) {
     return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
   }
+
+
 
   const about = [document.querySelector('.about-text-anim'), document.querySelector('.about-img-anim')];
 

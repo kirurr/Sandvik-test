@@ -10081,8 +10081,12 @@ button {
 }
 
 button:hover {
-  background-color: #cbc100;
   transform: scale(1.05);
+}
+
+button:active {
+  transform: translateY(5%);
+  background-color: #cbc100;
 }
 
 .hidden-anim, .panel {
@@ -10131,6 +10135,11 @@ button:hover {
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: rotate(-1deg);
   }
 }
 .container {
@@ -10401,6 +10410,24 @@ button {
 nav img {
   height: 70%;
   width: 70%;
+}
+
+._error {
+  color: red;
+}
+._error ::-webkit-input-placeholder {
+  color: red;
+}
+
+._error-anim {
+  animation: shake 0.5s forwards;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @media (min-width: 576px) {
