@@ -153,4 +153,28 @@ document.addEventListener('DOMContentLoaded', function () {
   panels.forEach(item => {
     panelsObserver.observe(item);
   });
+
+  const hamburger = document.querySelector('.hamburger-cover');
+  const hamburgerCover = document.querySelector('.hamburger-menu-cover');
+  const hamburgerLinks = document.querySelectorAll('.hamburger-link');
+  const body = document.body;
+
+
+  hamburger.addEventListener('click', function () {
+    hamburger.classList.toggle('open');
+    hamburgerCover.classList.toggle('open');
+    body.classList.toggle('open');
+  });
+
+  hamburgerLinks.forEach(e =>
+    e.addEventListener('click', function () {
+      hamburger.classList.remove('open');
+      hamburgerCover.classList.remove('open');
+      body.classList.remove('open');
+    }
+    ));
+
+
+
+
 })

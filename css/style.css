@@ -10097,6 +10097,100 @@ button:active {
   margin-top: 0;
 }
 
+.hamburger-nav {
+  display: none;
+}
+
+.hamburger-cover {
+  position: relative;
+}
+.hamburger-cover span,
+.hamburger-cover span::after,
+.hamburger-cover span::before {
+  transform-origin: 50%;
+  content: "";
+  z-index: 2;
+  position: absolute;
+  inset: 0;
+  width: 1.8rem;
+  height: 0.2rem;
+  border-radius: 5px;
+  background-color: white;
+}
+.hamburger-cover span::after {
+  transform: translateY(0.5rem);
+}
+.hamburger-cover span::before {
+  transform: translateY(-0.5rem);
+}
+
+.hamburger-menu-cover {
+  transition: 0.2s all ease-out;
+  transform: translateX(100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 2rem;
+  align-items: center;
+  background-color: #11162E;
+  z-index: 33;
+  position: fixed;
+  inset: 0;
+  padding: 1rem;
+  padding-top: 5rem;
+  height: 100%;
+  width: 100%;
+}
+.hamburger-menu-cover a {
+  color: white;
+  position: relative;
+  z-index: 34;
+}
+
+.hamburger-menu-cover.open {
+  transform: translateX(0);
+}
+
+.hamburger-cover.open span,
+.hamburger-cover.open span::after,
+.hamburger-cover.open span::before {
+  transition: 0.2s 0.2s rotate, 0.2s background-color, 0.2s transform;
+}
+
+.hamburger-cover.open span {
+  background-color: #11162E;
+}
+.hamburger-cover.open span::after {
+  transform: translateY(0);
+  rotate: 45deg;
+}
+.hamburger-cover.open span::before {
+  transform: translateY(0);
+  rotate: -45deg;
+}
+
+.hamburger-cover span,
+.hamburger-cover span::after,
+.hamburger-cover span::before {
+  transition: rotate 0.2s, background-color 0.2s 0.2s, transform 0.2s 0.2s;
+}
+
+.hamburger-cover span {
+  background-color: white;
+}
+.hamburger-cover span::after {
+  transform: translateY(0.5rem);
+  rotate: 0;
+}
+.hamburger-cover span::before {
+  transform: translateY(-0.5rem);
+  rotate: 0;
+}
+
+body.open {
+  overflow: hidden;
+}
+
 .hidden-anim, .panel {
   opacity: 0;
 }
@@ -10590,10 +10684,13 @@ input::-webkit-inner-spin-button {
     margin-top: 0rem;
   }
   .background::after {
-    height: 80vh;
+    height: 90%;
   }
-  .navbar {
+  .normal-nav {
     display: none;
+  }
+  .hamburger-nav {
+    display: initial;
   }
   h3 {
     font-size: 4rem;
