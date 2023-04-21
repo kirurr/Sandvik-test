@@ -10142,6 +10142,7 @@ button:active {
   width: 100%;
 }
 .hamburger-menu-cover a {
+  font-size: 1.6rem;
   color: white;
   position: relative;
   z-index: 34;
