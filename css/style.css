@@ -10430,7 +10430,18 @@ form button:has(.error) p {
   color: white;
 }
 
+form button p.error {
+  background-color: red;
+}
+form button p.error p {
+  color: white;
+}
+
 form button:has(.complete) {
+  background-color: rgb(0, 255, 0);
+}
+
+form button p.complete {
   background-color: rgb(0, 255, 0);
 }
 
