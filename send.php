@@ -3,8 +3,8 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'phpmailer/src/PHPMailer.php';
-require 'phpmailer/src/Exception.php';
+require 'phpmailer/PHPMailer.php';
+require 'phpmailer/Exception.php';
 
 // другие важные переменные
 $sender = 'timon09df@gmail.com';
@@ -12,7 +12,6 @@ $sender = 'timon09df@gmail.com';
 // настройки кодировок и прочего
 $mail = new PHPMailer(true);
 $mail->CharSet = 'UTF-8';
-$mail->setLanguage('ru', 'phpmailer/language/');
 $mail->isHTML(true);
 
 // переменные для вывода 
