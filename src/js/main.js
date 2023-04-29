@@ -157,10 +157,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const hamburger = document.querySelector('.hamburger-cover');
   const hamburgerCover = document.querySelector('.hamburger-menu-cover');
   const hamburgerLinks = document.querySelectorAll('.hamburger-link');
+  const lexLogo = document.querySelector('.lex-logo');
   const body = document.body;
 
 
   hamburger.addEventListener('click', function () {
+    hamburger.classList.toggle('open');
+    hamburgerCover.classList.toggle('open');
+    body.classList.toggle('open');
+  });
+
+  lexLogo.addEventListener('click', function () {
     hamburger.classList.toggle('open');
     hamburgerCover.classList.toggle('open');
     body.classList.toggle('open');

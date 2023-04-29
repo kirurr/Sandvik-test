@@ -7,19 +7,19 @@
   animation-duration: .5s;
   animation-fill-mode: forwards;
 }
-
+/*! uncss:ignore */
 .show-anim:has(h2) {
   animation-name: left-to-right;
   animation-duration: .5s;
   animation-fill-mode: forwards;
 }
-
+/*! uncss:ignore */
 .show-anim.panel {
   animation-name: right-to-left;
   animation-duration: .5s;
   animation-fill-mode: forwards;
 }
-
+/*! uncss:ignore */
 .second-row.show-anim {
   animation-name: left-to-right;
   animation-duration: .5s;

@@ -5,3 +5,13 @@
 @use 'main';
 @use 'mediaquery';
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;600&display=swap%27');
+/*! uncss:ignore */
+.hamburger-cover.open span::after {
+  transform: translateY(0);
+  rotate: 45deg !important;
+}
+/*! uncss:ignore */
+.hamburger-cover.open span::before {
+  transform: translateY(0);
+  rotate: -45deg !important;
+}

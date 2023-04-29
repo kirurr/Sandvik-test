@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "postcss-uncss": "^0.17.0",
+    "uncss": "^0.17.3"
+  }
+}

@@ -208,12 +208,12 @@ button:active {
 
     &::after {
       transform: translateY(.5rem);
-      rotate: 0;
+      rotate: 0deg;
     }
 
     &::before {
       transform: translateY(-.5rem);
-      rotate: 0;
+      rotate: 0deg;
     }
   }
 }
