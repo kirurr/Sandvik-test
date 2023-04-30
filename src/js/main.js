@@ -168,9 +168,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   lexLogo.addEventListener('click', function () {
-    hamburger.classList.toggle('open');
-    hamburgerCover.classList.toggle('open');
-    body.classList.toggle('open');
+    hamburger.classList.remove('open');
+    hamburgerCover.classList.remove('open');
+    body.classList.remove('open');
   });
 
   hamburgerLinks.forEach(e =>
