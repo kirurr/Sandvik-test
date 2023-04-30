@@ -17,6 +17,7 @@ $mail->isHTML(true);
 // переменные для вывода 
 $name = $_POST['name'];
 $email = $_POST['email'];
+$phone = $_POST['phone'];
 
 // настройки сервера
 $mail->Host       = 'smtp.elasticemail.com';                    
@@ -37,7 +38,8 @@ $mail->Subject = 'сайт строителей белого дома';
 // тело письма
 $body = '<h1>письмо кароче пришло с сайта ебать!</h1>';
 $body.= '<p><strong>Имя:</strong> ' . $name . '</p>';
-$body.= '<p><strong>Имя:</strong> ' . $email . '</p>';
+$body.= '<p><strong>Почта:</strong> ' . $email . '</p>';
+$body.= '<p><strong>Телефон:</strong> ' . $phone . '</p>';
 
 
 $mail->Body = $body;
