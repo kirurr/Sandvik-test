@@ -221,3 +221,9 @@ button:active {
 body.open {
   overflow: hidden;
 }
+
+.contact-form {
+  h3, p {
+    margin-bottom: 0;
+  }
+}
